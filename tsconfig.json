@@ -3,5 +3,5 @@
     "target": "ES5",
     "outDir": "build/"
   },
-  "include": ["src"]
+  "include": ["src", "modules/cadastro.ts"]
 }

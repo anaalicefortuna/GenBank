@@ -1,12 +1,7 @@
-function cadastro(){
+const prompt = require('prompt-sync')();
 
-    console.log (' << Você é pessoa Física ou juridica ?  >>: ')
 
-    console.log (' << 1 - Pessoa Física >>: ')
-
-    const tipoUsuario = prompt (' << 2 - juridica >>: ')
-
-    console.log()
+export function cadastro(tipoUsuario: number){
     
     console.log (' $$$$$ SE CADASTRE AQUI!!! $$$$$ '); 
     
@@ -20,11 +15,11 @@ function cadastro(){
     console.log();
     
     switch (tipoUsuario) {
-        case '1':
+        case 1:
             const cpfText = prompt ('Digite seu CPF');
                 break;
     
-        case '2':
+        case 2:
             const cnpjText = prompt ('Digite seu CNPJ');
                 break;
     
@@ -35,7 +30,7 @@ function cadastro(){
 
     console.log();
 
-    const celularText = prompt (' << 5 - Digite seu número>>: ');
+    const celularText = prompt (' << 5 - Digite seu número>>: (21) ');
     console.log();
     
     const senhaText = prompt (' << 6 Digite a sua senha>>: ');
@@ -65,5 +60,3 @@ function cadastro(){
     
     }
   
-
-module.exports = cadastro;

@@ -8,9 +8,9 @@ var  senha = Number  (prompt ('PORFAVOR DIGITE SUA SENHA:  '));
 
 if (login == cliente.email && senha == cliente.senha ){
     
-    console.log  ('    |$$$$$$$$$$$$$$$$$$$$$$$$$$$|    ');  
+    console.log  ('    |$$$$$$$$$$$$$$$$$$$$$$$$$$$|    ');
     console.log  ('    |~~~ BEM VINDO A GENBANK ~~~|    ');
-    console.log  ('    |$$$$$$$$$$$$$$$$$$$$$$$$$$$|    '); 
+    console.log  ('    |$$$$$$$$$$$$$$$$$$$$$$$$$$$|    ');
     
 }else {
      
@@ -23,4 +23,4 @@ if (login == cliente.email && senha == cliente.senha ){
 export { banco };
 
 
-*/
+*/ 
