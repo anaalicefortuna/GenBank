@@ -2,11 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cadastro = void 0;
 var prompt = require('prompt-sync')();
-function cadastro() {
-    console.log(' << Você é pessoa Física ou juridica ?  >>: ');
-    console.log(' << 1 - Pessoa Física >>: ');
-    var tipoUsuario = prompt(' << 2 - juridica >>: ');
-    console.log();
+function cadastro(tipoUsuario) {
     console.log(' $$$$$ SE CADASTRE AQUI!!! $$$$$ ');
     var nomeText = prompt(' <<  - Digite seu nome aqui>>: ');
     console.log();
@@ -15,17 +11,17 @@ function cadastro() {
     var emailText = prompt(' <<  - Digite seu Email:>>: ');
     console.log();
     switch (tipoUsuario) {
-        case '1':
+        case 1:
             var cpfText = prompt('Digite seu CPF');
             break;
-        case '2':
+        case 2:
             var cnpjText_1 = prompt('Digite seu CNPJ');
             break;
         default:
             break;
     }
     console.log();
-    var celularText = prompt(' << 5 - Digite seu número>>: ');
+    var celularText = prompt(' << 5 - Digite seu número>>: (21) ');
     console.log();
     var senhaText = prompt(' << 6 Digite a sua senha>>: ');
     console.log();

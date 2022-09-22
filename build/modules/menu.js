@@ -8,7 +8,6 @@ function menu() {
     var PromptSync = require("prompt-sync");
     var banco = require("./banco");
     var prompt = PromptSync();*/
-    console.clear();
     console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|    ');
     console.log('    |~~~~~~~~~~~ MENU ~~~~~~~~~~~|   ');
     console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n\n    ');

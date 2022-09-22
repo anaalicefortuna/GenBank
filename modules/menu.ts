@@ -3,7 +3,7 @@ import figlet = require("figlet");
 const prompt = require('prompt-sync')();
 
 
-export function menu(){
+export function menu(op: number){
 
 /*    "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
