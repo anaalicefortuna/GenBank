@@ -4,39 +4,44 @@ exports.login = void 0;
 var prompt = require('prompt-sync')();
 var readlineSync = require('readline-sync');
 function login(clientes) {
-    console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|    ');
-    console.log('    |~~~~~~~~~~ LOGIN ~~~~~~~~~~~|   ');
-    console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n    ');
-    console.log('Digite 0 para voltar ao menu\n');
-    console.log('E-mail: ');
-    var email = prompt('>> ');
-    if (email == '0') {
-        return null;
-    }
-    console.log('Senha: ');
-    var senha = readlineSync.question('>> ', {
-        hideEchoBack: true
-    });
-    clientes.forEach(function (cliente) {
-        if (email == cliente.email) {
-            if (senha == cliente.senha) {
-                //TODO
-                //console.log(cliente);
-                prompt('LOGIN COM SUCESSO');
-                return cliente;
+    var sair = false;
+    var _loop_1 = function () {
+        console.clear();
+        console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|    ');
+        console.log('    |~~~~~~~~~~ LOGIN ~~~~~~~~~~~|   ');
+        console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n    ');
+        console.log('Digite -9 para voltar ao menu\n');
+        console.log('E-mail: ');
+        var email = prompt('>> ');
+        if (email === '-9') {
+            return "break";
+        }
+        console.log('Senha: ');
+        var senha = readlineSync.question('>> ', {
+            hideEchoBack: true
+        });
+        if (senha === '-9') {
+            return "break";
+        }
+        var c = clientes.find(function (element) { return element.email == email; });
+        if (c != null) {
+            if (c.senha == senha) {
+                return { value: c };
             }
             else {
-                //TODO
-                prompt('SENHA INCORRETA');
-                return false;
+                prompt('Senha incorreta. Pressione ENTER para tentar novamente. ');
             }
         }
         else {
-            //TODO
-            prompt('EMAIL NÃO CADASTRADO');
-            return false;
+            prompt('E-mail inválido. Pressione ENTER para tentar novamente. ');
         }
-    });
-    return null;
+    };
+    do {
+        var state_1 = _loop_1();
+        if (typeof state_1 === "object")
+            return state_1.value;
+        if (state_1 === "break")
+            break;
+    } while (!sair);
 }
 exports.login = login;

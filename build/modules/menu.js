@@ -3,14 +3,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.menu = void 0;
 var prompt = require('prompt-sync')();
 function menu(op) {
+    console.clear();
     switch (op) {
         case 1:
             console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|    ');
             console.log('    |~~~~~~~~~~~ MENU ~~~~~~~~~~~|   ');
             console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n\n    ');
             console.log('1 - Login');
-            console.log('2 - Abrir conta pessoa física');
-            console.log('3 - Abrir conta pessoa jurídica');
+            console.log('2 - Abrir conta (pessoa física)');
+            console.log('3 - Abrir conta (pessoa jurídica)');
             console.log('4 - Sair');
             break;
         case 2:

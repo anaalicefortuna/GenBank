@@ -3,49 +3,92 @@ const prompt = require('prompt-sync')();
 import { Cliente } from "../src/Cliente";
 
 export function cadastro(tipoUsuario: number, clientes: Cliente[]): void{
+    let cadastrado: boolean = false;
+    do{
+        console.clear();
+        let cpf: number = 0;
+        let cnpj: number = 0;
     
-    console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
-    console.log('    |~~~~~~~~~ CADASTRO ~~~~~~~~~|');
-    console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n');
-    
-    console.log('Digite seu nome:');
-    const nome = prompt('>> ');
+        console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
+        console.log('    |~~~~~~~~~ CADASTRO ~~~~~~~~~|');
+        console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n');
 
-    if(tipoUsuario==1){
-        console.log('Digite seu CPF:');
-        const cpfText = prompt('>> ');
-    }else{
-        console.log('Digite seu CNPJ:');
-        const cnpjText = prompt('>> ');
-    }
+        console.log('Digite -9 para voltar ao menu\n');
+        
+        console.log('Digite seu nome:');
+        const nome = prompt('>> ');
 
-    console.log('Digite seu e-mail:');
-    const email = prompt('>> ');
-    
-    console.log('Digite seu celular: ');
-    const celularText = prompt('>> ');
+        if(nome==='-9'){
+            break;
+        }
 
-    console.log('Digite sua senha: ');
-    const senha = prompt('>> ');
-    
+        
+        if(tipoUsuario==1){
+            console.log('\nDigite seu CPF:');
+            const cpfText = prompt('>> ');
+            
+            if(cpfText=='-9'){
+                break;
+            }else{
+                const isNum: boolean = /^\d+$/.test(cpfText);
+                if(isNum){
+                    cpf = Number(cpfText);
+                }else{
+                    prompt('Seu CPF deve conter apenas números. ');
+                    continue;
+                }
+            }
+        }else{
+            console.log('\nDigite seu CNPJ:');
+            const cnpjText = prompt('>> ');
+            cnpj = Number(cnpjText);
 
-    
-    console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
-    console.log(`|~~~~~ MUITO OBRIGADO SR(A):${nome}~~~~~~|`);
-    console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
-    
-    console.log()
-    
-    console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
-    console.log('|~~ OBRIGADO POR SER CADASTRAR NA GENBANK! ~~|');
-    console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
-    
-    console.log()
-    
-    console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
-    console.log('|~~~~~~~ CONTINUE PARA A TELA DE LOGIN ~~~~~~|');
-    console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
-    
-    
-    }
+            if(cnpjText=='-9'){
+                break;
+            }else{
+                const isNum: boolean = /^\d+$/.test(cnpjText);
+                if(isNum){
+                    cpf = Number(cnpjText);
+                }else{
+                    prompt('O CNPJ deve conter apenas números. ');
+                    continue;
+                }
+            }
+        }
+
+        console.log('\nDigite seu e-mail:');
+        const email = prompt('>> ');
+
+        if(email==='-9'){
+            break;
+        }else{
+            if(!email.includes('@')){
+                prompt('E-mail inválido. ');
+                continue;
+            }
+        }
+        
+        console.log('\nDigite seu celular: ');
+        const celularText = prompt('>> ');
+        const celular = Number(celularText);
+
+        if(celularText==='-9'){
+            break;
+        }
+
+        console.log('\nDigite sua senha: ');
+        const senha = prompt('>> ');
+
+        if(senha==='-9'){
+            break;
+        }
+
+        cadastrado = true;
+
+        
+        console.log(`\nCadastro realizado com sucesso! Seja bem vinde ao GenBank!`);
+        prompt('\nPressione ENTER para continuar');
+        
+    }while(!cadastrado);
+}
   

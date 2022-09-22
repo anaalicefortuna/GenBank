@@ -2,6 +2,7 @@ const prompt = require('prompt-sync')();
 
 
 export function menu(op: number){
+    console.clear();
 
     switch(op){
         case 1:
@@ -9,8 +10,8 @@ export function menu(op: number){
             console.log('    |~~~~~~~~~~~ MENU ~~~~~~~~~~~|   ');
             console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n\n    ');
             console.log('1 - Login');
-            console.log('2 - Abrir conta pessoa física');
-            console.log('3 - Abrir conta pessoa jurídica');
+            console.log('2 - Abrir conta (pessoa física)');
+            console.log('3 - Abrir conta (pessoa jurídica)');
             console.log('4 - Sair');
             break;
         case 2:

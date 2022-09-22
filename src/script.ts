@@ -35,7 +35,6 @@ do{
                 cliente = login(clientes);
                 if(cliente != null){
                     isLogado=true;
-                    console.log(cliente);
                 }
                 break;
             case 2:
@@ -57,7 +56,6 @@ do{
         const op = Number(prompt('>> '));
         switch(op){
             case 1:
-                //TODO: DEPOSITAR
                 depositar(cliente);
                 break;
             case 2:

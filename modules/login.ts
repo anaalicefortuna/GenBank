@@ -4,45 +4,42 @@ const prompt = require('prompt-sync')();
 const readlineSync = require('readline-sync');
 
 export function login(clientes: Cliente[]): Cliente{
-    console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|    ');
-    console.log('    |~~~~~~~~~~ LOGIN ~~~~~~~~~~~|   ');
-    console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n    ');
-
-    console.log('Digite -9 para voltar ao menu\n');
-
-    console.log('E-mail: ');
-    const email = prompt('>> ');
+    let sair: boolean = false;
+    do{
+        console.clear();
+        console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|    ');
+        console.log('    |~~~~~~~~~~ LOGIN ~~~~~~~~~~~|   ');
+        console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n    ');
     
-    if(email=='-9'){
-        return null;
-    }
+        console.log('Digite -9 para voltar ao menu\n');
+    
+        console.log('E-mail: ');
+        const email = prompt('>> ');
+        
+        if(email==='-9'){
+            break;
+        }
+    
+        console.log('Senha: ');
+        const senha = readlineSync.question('>> ', {
+            hideEchoBack: true
+        });
+    
+        if(senha==='-9'){
+            break;
+        }
+    
+        const c = clientes.find(element => element.email == email);
 
-    console.log('Senha: ');
-    const senha = readlineSync.question('>> ', {
-        hideEchoBack: true
-    });
-
-    if(senha=='-9'){
-        return null;
-    }
-
-    /*clientes.forEach((cliente) => {
-        if(email == cliente.email){
-            if(senha == cliente.senha){
-                //TODO
-                //console.log(cliente);
-                prompt('LOGIN COM SUCESSO');
-                return cliente;
+        if(c != null){
+            if(c.senha == senha){
+                return c;
             }else{
-                //TODO
-                prompt('SENHA INCORRETA');
-                return false;
+                prompt('Senha incorreta. Pressione ENTER para tentar novamente. ');
             }
         }else{
-            //TODO
-            prompt('EMAIL NÃO CADASTRADO');
-            return false;
+            prompt('E-mail inválido. Pressione ENTER para tentar novamente. ');
         }
-    });
-    return null;*/
+    }while(!sair);
+    
 }
