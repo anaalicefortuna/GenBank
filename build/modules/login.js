@@ -7,8 +7,12 @@ function login(clientes) {
     console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|    ');
     console.log('    |~~~~~~~~~~ LOGIN ~~~~~~~~~~~|   ');
     console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n    ');
+    console.log('Digite 0 para voltar ao menu\n');
     console.log('E-mail: ');
     var email = prompt('>> ');
+    if (email == '0') {
+        return null;
+    }
     console.log('Senha: ');
     var senha = readlineSync.question('>> ', {
         hideEchoBack: true
@@ -16,19 +20,19 @@ function login(clientes) {
     clientes.forEach(function (cliente) {
         if (email == cliente.email) {
             if (senha == cliente.senha) {
-                //TODO: LOGIN COM SUCESSO
+                //TODO
                 //console.log(cliente);
                 prompt('LOGIN COM SUCESSO');
                 return cliente;
             }
             else {
-                //TODO: SENHA INCORRETA
+                //TODO
                 prompt('SENHA INCORRETA');
                 return false;
             }
         }
         else {
-            //TODO: EMAIL NÃO CADASTRADO
+            //TODO
             prompt('EMAIL NÃO CADASTRADO');
             return false;
         }

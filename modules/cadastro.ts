@@ -2,48 +2,36 @@ const prompt = require('prompt-sync')();
 
 import { Cliente } from "../src/Cliente";
 
-export function cadastro(tipoUsuario: number): void{
+export function cadastro(tipoUsuario: number, clientes: Cliente[]): void{
     
-    console.log (' ~~~~ SE CADASTRE AQUI!!! ~~~~ '); 
+    console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
+    console.log('    |~~~~~~~~~ CADASTRO ~~~~~~~~~|');
+    console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n');
     
-    const nomeText = prompt (' <<  - Digite seu nome aqui>>: ');
-    console.log();
-    
-    const idadeText: number = prompt (' <<  - Digite sua data de nascimento>>: ');
-    console.log();
-    
-    const emailText = prompt (' <<  - Digite seu Email:>>: ');
-    console.log();
-    
-    switch (tipoUsuario) {
-        case 1:
-            const cpfText: number = prompt ('Digite seu CPF');
-                break;
-    
-        case 2:
-            const cnpjText: number = prompt ('Digite seu CNPJ');
-                break;
-    
-        default:
-            
-                break;
+    console.log('Digite seu nome:');
+    const nome = prompt('>> ');
+
+    if(tipoUsuario==1){
+        console.log('Digite seu CPF:');
+        const cpfText = prompt('>> ');
+    }else{
+        console.log('Digite seu CNPJ:');
+        const cnpjText = prompt('>> ');
     }
 
-    console.log();
+    console.log('Digite seu e-mail:');
+    const email = prompt('>> ');
+    
+    console.log('Digite seu celular: ');
+    const celularText = prompt('>> ');
 
-    const celularText = prompt (' << 5 - Digite seu número>>: (21) ');
-    console.log();
+    console.log('Digite sua senha: ');
+    const senha = prompt('>> ');
     
-    const senhaText = prompt (' << 6 Digite a sua senha>>: ');
-    console.log();
-    
-    const cnpjText = prompt (' << 7 Digite seu CNPJ >>: ');
-    console.log();
-    
-    
+
     
     console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
-    console.log(`|~~~~~ MUITO OBRIGADO SR(A):${nomeText}~~~~~~|`);
+    console.log(`|~~~~~ MUITO OBRIGADO SR(A):${nome}~~~~~~|`);
     console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
     
     console.log()

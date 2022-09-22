@@ -26,19 +26,18 @@ do {
         switch (option) {
             case 1:
                 cliente = (0, login_1.login)(clientes);
-                if (cliente != false && cliente != undefined) {
+                if (cliente != null) {
                     isLogado = true;
                     console.log(cliente);
                 }
-                isLogado = true;
                 break;
             case 2:
                 //TODO: CADASTRO PESSOA FISICA
-                (0, cadastro_1.cadastro)(1);
+                (0, cadastro_1.cadastro)(1, clientes);
                 break;
             case 3:
                 //TODO: CADASTRO PESSOA JURIDICA
-                (0, cadastro_1.cadastro)(2);
+                (0, cadastro_1.cadastro)(2, clientes);
                 break;
             case 4:
                 break;

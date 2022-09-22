@@ -2,33 +2,28 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cadastro = void 0;
 var prompt = require('prompt-sync')();
-function cadastro(tipoUsuario) {
-    console.log(' ~~~~ SE CADASTRE AQUI!!! ~~~~ ');
-    var nomeText = prompt(' <<  - Digite seu nome aqui>>: ');
-    console.log();
-    var idadeText = prompt(' <<  - Digite sua data de nascimento>>: ');
-    console.log();
-    var emailText = prompt(' <<  - Digite seu Email:>>: ');
-    console.log();
-    switch (tipoUsuario) {
-        case 1:
-            var cpfText = prompt('Digite seu CPF');
-            break;
-        case 2:
-            var cnpjText_1 = prompt('Digite seu CNPJ');
-            break;
-        default:
-            break;
+function cadastro(tipoUsuario, clientes) {
+    console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
+    console.log('    |~~~~~~~~~ CADASTRO ~~~~~~~~~|');
+    console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n');
+    console.log('Digite seu nome:');
+    var nome = prompt('>> ');
+    if (tipoUsuario == 1) {
+        console.log('Digite seu CPF:');
+        var cpfText = prompt('>> ');
     }
-    console.log();
-    var celularText = prompt(' << 5 - Digite seu número>>: (21) ');
-    console.log();
-    var senhaText = prompt(' << 6 Digite a sua senha>>: ');
-    console.log();
-    var cnpjText = prompt(' << 7 Digite seu CNPJ >>: ');
-    console.log();
+    else {
+        console.log('Digite seu CNPJ:');
+        var cnpjText = prompt('>> ');
+    }
+    console.log('Digite seu e-mail:');
+    var email = prompt('>> ');
+    console.log('Digite seu celular: ');
+    var celularText = prompt('>> ');
+    console.log('Digite sua senha: ');
+    var senha = prompt('>> ');
     console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
-    console.log("|~~~~~ MUITO OBRIGADO SR(A):".concat(nomeText, "~~~~~~|"));
+    console.log("|~~~~~ MUITO OBRIGADO SR(A):".concat(nome, "~~~~~~|"));
     console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
     console.log();
     console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');

@@ -33,19 +33,18 @@ do{
         switch(option){
             case 1:
                 cliente = login(clientes);
-                if(cliente != false && cliente != undefined){ //não funciona, função retornando undefined
+                if(cliente != null){
                     isLogado=true;
                     console.log(cliente);
                 }
-                isLogado=true;
                 break;
             case 2:
                 //TODO: CADASTRO PESSOA FISICA
-                cadastro(1);
+                cadastro(1, clientes);
                 break;
             case 3:
                 //TODO: CADASTRO PESSOA JURIDICA
-                cadastro(2);
+                cadastro(2, clientes);
                 break;
             case 4:
                 break;
