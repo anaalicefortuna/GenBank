@@ -2,50 +2,28 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.menu = void 0;
 var prompt = require('prompt-sync')();
-function menu() {
-    /*    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var PromptSync = require("prompt-sync");
-    var banco = require("./banco");
-    var prompt = PromptSync();*/
-    console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|    ');
-    console.log('    |~~~~~~~~~~~ MENU ~~~~~~~~~~~|   ');
-    console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n\n    ');
-    //console.log ("\n~~~Um banco transparente e completo com produtos exclusivos para!!!~~~\n\n ")
-    console.log('1 - Login');
-    console.log('2 - Abrir conta pessoa física');
-    console.log('3 - Abrir conta pessoa jurídica');
-    console.log('4 - Sair');
-    /*var escolha;
-    do {
-        escolha = Number(prompt('\n 1 - LOGIN: \n\n 2 - ABRA SUA CONTA \n\n 3 - ABRA UMA CONTA PARA SUA EMPRESA\n\n 4 - SOBRE NÓS!!! \n\nESCOLHA UMA OPÇÃO: '));
-    } while (escolha < 1 || escolha > 4);
-    // estrutura switch
-    switch (escolha) {
+function menu(op) {
+    switch (op) {
         case 1:
-            {
-                console.clear();
-                banco();
-                break;
-            }
+            console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|    ');
+            console.log('    |~~~~~~~~~~~ MENU ~~~~~~~~~~~|   ');
+            console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n\n    ');
+            console.log('1 - Login');
+            console.log('2 - Abrir conta pessoa física');
+            console.log('3 - Abrir conta pessoa jurídica');
+            console.log('4 - Sair');
+            break;
         case 2:
-            {
-                console.clear();
-                //TODO //TODO //TODO
-                break;
-            }
-        case 3:
-            {
-                console.clear();
-                //TODO //TODO //TODO
-                break;
-            }
-        case 4:
-            {
-                window.history.back();
-                console.log("\n\n SOBRE NÓS // aperte enter para voltar a página principal.");
-                break;
-            }
-    }*/
+            //TODO
+            console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|    ');
+            console.log('    |~~~~~~~~~~~ MENU ~~~~~~~~~~~|   ');
+            console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n\n    ');
+            console.log('1 - Depositar');
+            console.log('2 - Pagar');
+            console.log('3 - Cartões');
+            console.log('4 - Extrato');
+            console.log('5 - Dados pessoais');
+            console.log('6 - Sair');
+    }
 }
 exports.menu = menu;

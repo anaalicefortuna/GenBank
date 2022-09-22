@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.cadastro = void 0;
 var prompt = require('prompt-sync')();
 function cadastro(tipoUsuario) {
-    console.log(' $$$$$ SE CADASTRE AQUI!!! $$$$$ ');
+    console.log(' ~~~~ SE CADASTRE AQUI!!! ~~~~ ');
     var nomeText = prompt(' <<  - Digite seu nome aqui>>: ');
     console.log();
     var idadeText = prompt(' <<  - Digite sua data de nascimento>>: ');
@@ -27,16 +27,16 @@ function cadastro(tipoUsuario) {
     console.log();
     var cnpjText = prompt(' << 7 Digite seu CNPJ >>: ');
     console.log();
-    console.log('|$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$|');
-    console.log("|$$$$$ MUITO OBRIGADO SR(A):".concat(nomeText, "$$$$$$|"));
-    console.log('|$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$|');
+    console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
+    console.log("|~~~~~ MUITO OBRIGADO SR(A):".concat(nomeText, "~~~~~~|"));
+    console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
     console.log();
-    console.log('|$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$|');
-    console.log('|$$ OBRIGADO POR SER CADASTRAR NA GENBANK! $$|');
-    console.log('|$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$|');
+    console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
+    console.log('|~~ OBRIGADO POR SER CADASTRAR NA GENBANK! ~~|');
+    console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
     console.log();
-    console.log('|$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$|');
-    console.log('|$$$$$$$ CONTINUE PARA A TELA DE LOGIN $$$$$$$|');
-    console.log('|$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$|');
+    console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
+    console.log('|~~~~~~~ CONTINUE PARA A TELA DE LOGIN ~~~~~~|');
+    console.log('|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
 }
 exports.cadastro = cadastro;

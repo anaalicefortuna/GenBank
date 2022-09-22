@@ -3,7 +3,7 @@ import { Cliente } from "../src/Cliente";
 const prompt = require('prompt-sync')();
 const readlineSync = require('readline-sync');
 
-export function login(clientes: Cliente[]): boolean{
+export function login(clientes: Cliente[]): Cliente{
     console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|    ');
     console.log('    |~~~~~~~~~~ LOGIN ~~~~~~~~~~~|   ');
     console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n    ');
@@ -20,20 +20,19 @@ export function login(clientes: Cliente[]): boolean{
         if(email == cliente.email){
             if(senha == cliente.senha){
                 //TODO: LOGIN COM SUCESSO
-                prompt('A');
-                return true;
+                //console.log(cliente);
+                prompt('LOGIN COM SUCESSO');
+                return cliente;
             }else{
                 //TODO: SENHA INCORRETA
-                prompt('B');
+                prompt('SENHA INCORRETA');
                 return false;
             }
         }else{
             //TODO: EMAIL NÃO CADASTRADO
-            prompt('C');
+            prompt('EMAIL NÃO CADASTRADO');
             return false;
         }
     });
-
-    return false;
-
+    return null;
 }

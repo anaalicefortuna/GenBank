@@ -1,27 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Conta = void 0;
+var Transacao_1 = require("./Transacao");
 var Conta = /** @class */ (function () {
-    function Conta(tipoConta, titular) {
+    function Conta() {
+        this._saldo = 0;
         this.transacoes = [];
-        this.tipoConta = tipoConta;
         this.numConta = Number((Math.random() * (99999999 - 10000000) + 10000000).toFixed(0));
         this.digito = Number((Math.random() * (9 - 1) + 1).toFixed(0));
         this.agencia = Number((Math.random() * (999 - 100) + 100).toFixed(0));
         ;
-        this.titular = titular;
-        this.saldo = 0;
     }
-    Object.defineProperty(Conta.prototype, "tipoConta", {
-        get: function () {
-            return this._tipoConta;
-        },
-        set: function (value) {
-            this._tipoConta = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
+    Conta.prototype.registrarTransacao = function (valor, tipoTransacao, contaDestino) {
+        var transacao = new Transacao_1.Transacao(valor, tipoTransacao, this, contaDestino);
+        this.transacoes.push(transacao);
+    };
     Object.defineProperty(Conta.prototype, "numConta", {
         get: function () {
             return this._numConta;
@@ -48,16 +41,6 @@ var Conta = /** @class */ (function () {
         },
         set: function (value) {
             this._agencia = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Conta.prototype, "titular", {
-        get: function () {
-            return this._titular;
-        },
-        set: function (value) {
-            this._titular = value;
         },
         enumerable: false,
         configurable: true

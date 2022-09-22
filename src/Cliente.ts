@@ -1,3 +1,4 @@
+import { Cartao } from "./Cartao";
 import { Conta } from "./Conta";
 
 export abstract class Cliente{
@@ -7,6 +8,7 @@ export abstract class Cliente{
     private _email: string;
     private _senha: string;
     private _conta: Conta;
+    private cartoes: Cartao[] = [];
 
     constructor(nome: string, endereco: string, telefone: number, email: string, senha: string){
         this.nome = nome;
@@ -14,10 +16,7 @@ export abstract class Cliente{
         this.telefone = telefone;
         this.email = email;
         this.senha = senha;
-    }
-
-    public abrirConta(tipoConta: string){
-        this.conta = new Conta('Corrente', this);
+        this.conta = new Conta();
     }
 
     public get endereco(): string {

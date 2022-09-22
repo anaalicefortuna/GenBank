@@ -4,15 +4,14 @@ exports.Cliente = void 0;
 var Conta_1 = require("./Conta");
 var Cliente = /** @class */ (function () {
     function Cliente(nome, endereco, telefone, email, senha) {
+        this.cartoes = [];
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
         this.email = email;
         this.senha = senha;
+        this.conta = new Conta_1.Conta();
     }
-    Cliente.prototype.abrirConta = function (tipoConta) {
-        this.conta = new Conta_1.Conta('Corrente', this);
-    };
     Object.defineProperty(Cliente.prototype, "endereco", {
         get: function () {
             return this._endereco;

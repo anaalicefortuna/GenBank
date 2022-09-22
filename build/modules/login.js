@@ -17,21 +17,22 @@ function login(clientes) {
         if (email == cliente.email) {
             if (senha == cliente.senha) {
                 //TODO: LOGIN COM SUCESSO
-                prompt('A');
-                return true;
+                //console.log(cliente);
+                prompt('LOGIN COM SUCESSO');
+                return cliente;
             }
             else {
                 //TODO: SENHA INCORRETA
-                prompt('B');
+                prompt('SENHA INCORRETA');
                 return false;
             }
         }
         else {
             //TODO: EMAIL NÃO CADASTRADO
-            prompt('C');
+            prompt('EMAIL NÃO CADASTRADO');
             return false;
         }
     });
-    return false;
+    return null;
 }
 exports.login = login;
