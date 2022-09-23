@@ -29,7 +29,7 @@ export function login(clientes: Cliente[]): Cliente{
             break;
         }
     
-        const c = clientes.find(element => element.email.toLowerCase == email.toLowerCase);
+        const c = clientes.find(element => element.email.toLowerCase() == email.toLowerCase());
 
         if(c != null){
             if(c.senha == senha){
