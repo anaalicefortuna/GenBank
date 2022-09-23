@@ -3,11 +3,12 @@ import { menu } from "../modules/menu";
 import { login } from "../modules/login";
 import { cadastro } from "../modules/cadastro";
 import { depositar } from "../modules/depositar";
-import { Cartao } from "../modules/Cartao";
 import { Cliente } from "../modules/Cliente";
 import { PessoaFisica } from "../modules/PessoaFisica";
 import { dadosPessoais } from "../modules/dadosPessoais";
 import { pagamento } from "../modules/pagamento";
+import { extrato } from "../modules/extrato";
+
 const prompt = PromptSync();
 
 let option = 0;
@@ -40,11 +41,9 @@ do{
                 }
                 break;
             case 2:
-                //TODO: CADASTRO PESSOA FISICA
                 cadastro(1, clientes);
                 break;
             case 3:
-                //TODO: CADASTRO PESSOA JURIDICA
                 cadastro(2, clientes);
                 break;
             case 4:
@@ -64,7 +63,7 @@ do{
                 pagamento(cliente);
                 break;
             case 3:
-                //TODO: EXTRATO
+                extrato(cliente);
                 break;
             case 4:
                 dadosPessoais(cliente);

@@ -8,6 +8,7 @@ var depositar_1 = require("../modules/depositar");
 var PessoaFisica_1 = require("../modules/PessoaFisica");
 var dadosPessoais_1 = require("../modules/dadosPessoais");
 var pagamento_1 = require("../modules/pagamento");
+var extrato_1 = require("../modules/extrato");
 var prompt = PromptSync();
 var option = 0;
 var isLogado = false;
@@ -33,11 +34,9 @@ do {
                 }
                 break;
             case 2:
-                //TODO: CADASTRO PESSOA FISICA
                 (0, cadastro_1.cadastro)(1, clientes);
                 break;
             case 3:
-                //TODO: CADASTRO PESSOA JURIDICA
                 (0, cadastro_1.cadastro)(2, clientes);
                 break;
             case 4:
@@ -58,7 +57,7 @@ do {
                 (0, pagamento_1.pagamento)(cliente);
                 break;
             case 3:
-                //TODO: EXTRATO
+                (0, extrato_1.extrato)(cliente);
                 break;
             case 4:
                 (0, dadosPessoais_1.dadosPessoais)(cliente);

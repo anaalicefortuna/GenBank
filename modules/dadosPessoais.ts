@@ -18,6 +18,7 @@ export function dadosPessoais (cliente: Cliente){
   console.log(`ENDERECO: ${cliente.telefone}         `);
   console.log(`EMAIL: ${cliente.email} `);
   console.log(`NUMERO DA CONTA: ${cliente.conta.numConta}-${cliente.conta.digito}`);
+  console.log(`SALDO: R$${cliente.conta.saldo.toFixed(2)}`);
   console.log('=====================================');
 
   prompt('Pressione ENTER para voltar ao menu');

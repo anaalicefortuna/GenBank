@@ -23,7 +23,7 @@ function login(clientes) {
         if (senha === '-9') {
             return "break";
         }
-        var c = clientes.find(function (element) { return element.email == email; });
+        var c = clientes.find(function (element) { return element.email.toLowerCase == email.toLowerCase; });
         if (c != null) {
             if (c.senha == senha) {
                 return { value: c };
