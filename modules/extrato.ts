@@ -11,9 +11,10 @@ function extrato (cliente: Cliente) {
 
     cliente.conta.transacoes.forEach((transacao) =>{
 
-        console.log(`Tipo de transação: ${transacao.tipoTransacao}`);
+        console.log(`\nTipo de transação: ${transacao.tipoTransacao}`);
         console.log(`Valor: R$${transacao.valor}`);
         console.log(`Data da Transação: ${transacao.dataTransacao}\n`);
+        console.log('==============================')
 
     });
 
