@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cadastro = void 0;
 var prompt = require('prompt-sync')();
+var PessoaFisica_1 = require("./PessoaFisica");
+var PessoaJuridica_1 = require("./PessoaJuridica");
 function cadastro(tipoUsuario, clientes) {
     var cadastrado = false;
     do {
@@ -52,6 +54,17 @@ function cadastro(tipoUsuario, clientes) {
                 }
             }
         }
+        console.log('\nDigite seu endereco: ');
+        var endereco = prompt('>> ');
+        if (endereco === '-9') {
+            break;
+        }
+        console.log('\nDigite seu celular: ');
+        var celularText = prompt('>> ');
+        var celular = Number(celularText);
+        if (celularText === '-9') {
+            break;
+        }
         console.log('\nDigite seu e-mail:');
         var email = prompt('>> ');
         if (email === '-9') {
@@ -63,25 +76,18 @@ function cadastro(tipoUsuario, clientes) {
                 continue;
             }
         }
-        console.log('\nDigite seu celular: ');
-        var celularText = prompt('>> ');
-        var celular = Number(celularText);
-        if (celularText === '-9') {
-            break;
-        }
         console.log('\nDigite sua senha: ');
         var senha = prompt('>> ');
         if (senha === '-9') {
             break;
         }
+        if (tipoUsuario == 1) {
+            var c = new PessoaFisica_1.PessoaFisica(nome, endereco, celular, email, senha, cpf);
+            clientes.push(c);
+        }
         else {
-            var isNum = /^\d+$/.test(senha);
-            if (isNum) {
-                cpf = Number(senha);
-            }
-            else {
-                continue;
-            }
+            var c = new PessoaJuridica_1.PessoaJuridica(nome, endereco, celular, email, senha, cnpj);
+            clientes.push(c);
         }
         cadastrado = true;
         console.log("\nCadastro realizado com sucesso! Seja bem vinde ao GenBank!");

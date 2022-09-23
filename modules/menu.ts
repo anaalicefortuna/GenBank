@@ -21,10 +21,9 @@ export function menu(op: number){
             console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n\n    ');
             console.log('1 - Depositar');
             console.log('2 - Pagar');
-            console.log('3 - Cartões');
-            console.log('4 - Extrato');
-            console.log('5 - Dados pessoais');
-            console.log('6 - Sair');
+            console.log('3 - Extrato');
+            console.log('4 - Dados pessoais');
+            console.log('5 - Sair');
     }
 
 }

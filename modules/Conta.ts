@@ -14,8 +14,8 @@ export class Conta{
         this.agencia = Number((Math.random()*(999-100)+100).toFixed(0));;
     }
 
-    public registrarTransacao(valor: number, tipoTransacao: string, contaDestino: Conta){
-        const transacao = new Transacao(valor, tipoTransacao, this, contaDestino);
+    public registrarTransacao(valor: number, tipoTransacao: string){
+        const transacao = new Transacao(valor, tipoTransacao);
         this.transacoes.push(transacao);
     }
 

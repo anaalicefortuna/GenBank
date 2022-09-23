@@ -5,7 +5,9 @@ var menu_1 = require("../modules/menu");
 var login_1 = require("../modules/login");
 var cadastro_1 = require("../modules/cadastro");
 var depositar_1 = require("../modules/depositar");
-var PessoaFisica_1 = require("./PessoaFisica");
+var PessoaFisica_1 = require("../modules/PessoaFisica");
+var dadosPessoais_1 = require("../modules/dadosPessoais");
+var pagamento_1 = require("../modules/pagamento");
 var prompt = PromptSync();
 var option = 0;
 var isLogado = false;
@@ -53,18 +55,15 @@ do {
                 (0, depositar_1.depositar)(cliente);
                 break;
             case 2:
-                //TODO: PAGAR
+                (0, pagamento_1.pagamento)(cliente);
                 break;
             case 3:
-                //TODO: CARTÕES
-                break;
-            case 4:
                 //TODO: EXTRATO
                 break;
-            case 5:
-                //TODO: DADOS PESSOAIS
+            case 4:
+                (0, dadosPessoais_1.dadosPessoais)(cliente);
                 break;
-            case 6: //SAIR
+            case 5: //SAIR
                 isLogado = false;
                 break;
             default: break;

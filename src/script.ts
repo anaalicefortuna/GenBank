@@ -3,9 +3,11 @@ import { menu } from "../modules/menu";
 import { login } from "../modules/login";
 import { cadastro } from "../modules/cadastro";
 import { depositar } from "../modules/depositar";
-import { Cartao } from "./Cartao";
-import { Cliente } from "./Cliente";
-import { PessoaFisica } from "./PessoaFisica";
+import { Cartao } from "../modules/Cartao";
+import { Cliente } from "../modules/Cliente";
+import { PessoaFisica } from "../modules/PessoaFisica";
+import { dadosPessoais } from "../modules/dadosPessoais";
+import { pagamento } from "../modules/pagamento";
 const prompt = PromptSync();
 
 let option = 0;
@@ -59,18 +61,15 @@ do{
                 depositar(cliente);
                 break;
             case 2:
-                //TODO: PAGAR
+                pagamento(cliente);
                 break;
             case 3:
-                //TODO: CARTÕES
-                break;
-            case 4:
                 //TODO: EXTRATO
                 break;
-            case 5:
-                //TODO: DADOS PESSOAIS
+            case 4:
+                dadosPessoais(cliente);
                 break;
-            case 6: //SAIR
+            case 5: //SAIR
                 isLogado = false;
                 break;
 

@@ -1,4 +1,4 @@
-import { Cliente } from "../src/Cliente";
+import { Cliente } from "./Cliente";
 
 const prompt = require('prompt-sync')();
 const readlineSync = require('readline-sync');

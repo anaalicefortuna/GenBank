@@ -2,13 +2,14 @@
 const valor = prompt('>> R$');
 depositar(valor);*/
 
-import { Cliente } from "../src/Cliente";
+import { Cliente } from "./Cliente";
 import PromptSync = require("prompt-sync");
+import { Transacao } from "./Transacao";
 const prompt = PromptSync();
 
 export function depositar(cliente: Cliente){
-    console.clear();
 
+    console.clear();
     console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|');
     console.log('    |~~~~~~~~~ DEPÓSITO ~~~~~~~~~|');
     console.log('    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|\n');
@@ -24,7 +25,10 @@ export function depositar(cliente: Cliente){
     switch(op){
         case 1:
             cliente.conta.saldo+=valor;
-            console.log(`\nDepósito realizado com sucesso. Saldo atual: ${cliente.conta.saldo}`);
+            cliente.conta.registrarTransacao(valor, 'Depósito');
+            
+            console.clear();
+            console.log(`\nDepósito realizado com sucesso. Saldo atual: R$${cliente.conta.saldo.toFixed(2)}`);
         case 2:
             prompt('\nPressione ENTER para voltar ao menu');
             break;

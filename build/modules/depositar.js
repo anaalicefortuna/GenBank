@@ -20,7 +20,8 @@ function depositar(cliente) {
     switch (op) {
         case 1:
             cliente.conta.saldo += valor;
-            console.log("\nDep\u00F3sito realizado com sucesso. Saldo atual: ".concat(cliente.conta.saldo));
+            cliente.conta.registrarTransacao(valor, 'Depósito');
+            console.log("\nDep\u00F3sito realizado com sucesso. Saldo atual: R$".concat(cliente.conta.saldo.toFixed(2)));
         case 2:
             prompt('\nPressione ENTER para voltar ao menu');
             break;

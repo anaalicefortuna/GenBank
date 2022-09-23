@@ -1,6 +1,8 @@
 const prompt = require('prompt-sync')();
 
-import { Cliente } from "../src/Cliente";
+import { Cliente } from "./Cliente";
+import { PessoaFisica } from "./PessoaFisica";
+import { PessoaJuridica } from "./PessoaJuridica";
 
 export function cadastro(tipoUsuario: number, clientes: Cliente[]): void{
     let cadastrado: boolean = false;
@@ -56,6 +58,21 @@ export function cadastro(tipoUsuario: number, clientes: Cliente[]): void{
             }
         }
 
+        console.log('\nDigite seu endereco: ');
+        const endereco = prompt('>> ');
+
+        if(endereco==='-9'){
+            break;
+        }
+
+        console.log('\nDigite seu celular: ');
+        const celularText = prompt('>> ');
+        const celular = Number(celularText);
+
+        if(celularText==='-9'){
+            break;
+        }
+
         console.log('\nDigite seu e-mail:');
         const email = prompt('>> ');
 
@@ -68,14 +85,6 @@ export function cadastro(tipoUsuario: number, clientes: Cliente[]): void{
             }
         }
         
-        console.log('\nDigite seu celular: ');
-        const celularText = prompt('>> ');
-        const celular = Number(celularText);
-
-        if(celularText==='-9'){
-            break;
-        }
-
         console.log('\nDigite sua senha: ');
         const senha = prompt('>> ');
 
@@ -83,7 +92,17 @@ export function cadastro(tipoUsuario: number, clientes: Cliente[]): void{
             break;
         }
 
+        if(tipoUsuario==1){
+            const c = new PessoaFisica(nome, endereco, celular, email, senha, cpf);
+            clientes.push(c);
+        }else{
+            const c = new PessoaJuridica(nome, endereco, celular, email, senha, cnpj);
+            clientes.push(c);
+        }
+
         cadastrado = true;
+        
+
 
         
         console.log(`\nCadastro realizado com sucesso! Seja bem vinde ao GenBank!`);

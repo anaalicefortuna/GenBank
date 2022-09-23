@@ -15,15 +15,15 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PessoaFisica = void 0;
+exports.PessoaJuridica = void 0;
 var Cliente_1 = require("./Cliente");
-var PessoaFisica = /** @class */ (function (_super) {
-    __extends(PessoaFisica, _super);
-    function PessoaFisica(nome, endereco, telefone, email, senha, cnpj) {
+var PessoaJuridica = /** @class */ (function (_super) {
+    __extends(PessoaJuridica, _super);
+    function PessoaJuridica(nome, endereco, telefone, email, senha, cnpj) {
         var _this = _super.call(this, nome, endereco, telefone, email, senha) || this;
         _this.cnpj = cnpj;
         return _this;
     }
-    return PessoaFisica;
+    return PessoaJuridica;
 }(Cliente_1.Cliente));
-exports.PessoaFisica = PessoaFisica;
+exports.PessoaJuridica = PessoaJuridica;
